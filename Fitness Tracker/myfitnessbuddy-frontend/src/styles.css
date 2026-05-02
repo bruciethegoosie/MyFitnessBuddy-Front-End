@@ -870,6 +870,28 @@ h3 {
   padding: 14px 0;
 }
 
+.add-plan-form {
+  align-items: center;
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 1fr auto;
+  margin-top: 16px;
+}
+
+.add-plan-form input {
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  color: var(--text-dark);
+  min-height: 44px;
+  outline: 0;
+  padding: 12px 14px;
+}
+
+.add-plan-form input:focus {
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
 .invite-card div {
   background: #f8fafc;
   border-radius: 8px;
@@ -937,6 +959,10 @@ h3 {
   }
 
   .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .add-plan-form {
     grid-template-columns: 1fr;
   }
 

@@ -450,6 +450,28 @@ function Record({ lift, you, friend, result }) {
 }
 
 function SharedPlans() {
+  const [planExercises, setPlanExercises] = useState([
+    "Bench Press - 4 sets x 8 reps",
+    "Overhead Press - 3 sets x 10 reps",
+    "Tricep Dips - 3 sets x 12 reps",
+    "Chest Fly - 3 sets x 15 reps"
+  ]);
+  const [isAddingExercise, setIsAddingExercise] = useState(false);
+  const [newExercise, setNewExercise] = useState("");
+
+  function handleAddExercise(event) {
+    event.preventDefault();
+    const exercise = newExercise.trim();
+
+    if (!exercise) {
+      return;
+    }
+
+    setPlanExercises([...planExercises, exercise]);
+    setNewExercise("");
+    setIsAddingExercise(false);
+  }
+
   return (
     <>
       <section className="page-header split">
@@ -459,10 +481,23 @@ function SharedPlans() {
       <section className="shared-grid">
         <div className="card plan-card">
           <div className="card-title-row"><h2>Push Day Plan</h2><span className="pill">Shared with Dario</span></div>
-          {["Bench Press - 4 sets x 8 reps", "Overhead Press - 3 sets x 10 reps", "Tricep Dips - 3 sets x 12 reps", "Chest Fly - 3 sets x 15 reps"].map((item) => (
+          {planExercises.map((item) => (
             <div className="plan-row" key={item}><Icon>drag_indicator</Icon><span>{item}</span><button className="icon-button"><Icon>edit</Icon></button></div>
           ))}
-          <button className="add-exercise small"><Icon>add_circle</Icon>Add Exercise</button>
+          {isAddingExercise && (
+            <form className="add-plan-form" onSubmit={handleAddExercise}>
+              <input
+                autoFocus
+                onChange={(event) => setNewExercise(event.target.value)}
+                placeholder="Type an exercise, sets, and reps..."
+                value={newExercise}
+              />
+              <button className="primary-button" type="submit">Add</button>
+            </form>
+          )}
+          <button className="add-exercise small" onClick={() => setIsAddingExercise(true)}>
+            <Icon>add_circle</Icon>Add Exercise
+          </button>
         </div>
         <aside className="card invite-card">
           <h2>Collaboration</h2>
