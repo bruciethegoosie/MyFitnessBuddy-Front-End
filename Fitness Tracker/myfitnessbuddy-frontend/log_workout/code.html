@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Log Workout - MyFitnessBuddy</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Lexend:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h1, h2, h3, .brand-font {
+            font-family: 'Lexend', sans-serif;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#faf8ff",
+                        "outline-variant": "#c3c6d7",
+                        "inverse-on-surface": "#f0f0fb",
+                        "secondary-fixed": "#d5e4f8",
+                        "outline": "#737686",
+                        "on-secondary-fixed-variant": "#3a4858",
+                        "secondary-fixed-dim": "#b9c8db",
+                        "surface": "#faf8ff",
+                        "surface-container-highest": "#e1e2ed",
+                        "tertiary-fixed-dim": "#b6c4ff",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#264191",
+                        "on-error": "#ffffff",
+                        "surface-container": "#ededf9",
+                        "secondary": "#516070",
+                        "on-secondary-container": "#576676",
+                        "tertiary-fixed": "#dce1ff",
+                        "on-surface-variant": "#434655",
+                        "on-primary": "#ffffff",
+                        "on-primary-container": "#eeefff",
+                        "inverse-primary": "#b4c5ff",
+                        "error": "#ba1a1a",
+                        "surface-tint": "#0053db",
+                        "on-secondary-fixed": "#0e1d2b",
+                        "secondary-container": "#d5e4f8",
+                        "primary": "#004ac6",
+                        "primary-container": "#2563eb",
+                        "surface-container-low": "#f3f3fe",
+                        "tertiary-container": "#5069bb",
+                        "on-tertiary-container": "#eff0ff",
+                        "surface-variant": "#e1e2ed",
+                        "surface-bright": "#faf8ff",
+                        "error-container": "#ffdad6",
+                        "primary-fixed": "#dbe1ff",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "inverse-surface": "#2e3039",
+                        "on-tertiary": "#ffffff",
+                        "tertiary": "#3750a0",
+                        "surface-container-high": "#e7e7f3",
+                        "on-tertiary-fixed": "#00164e",
+                        "on-error-container": "#93000a",
+                        "on-background": "#191b23",
+                        "surface-dim": "#d9d9e5",
+                        "on-surface": "#191b23",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "on-primary-fixed": "#00174b",
+                        "surface-container-lowest": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "xl": "40px",
+                        "base": "4px",
+                        "sm": "8px",
+                        "lg": "24px",
+                        "md": "16px",
+                        "container-max": "1200px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "h1": ["Lexend"],
+                        "body-md": ["Inter"],
+                        "h2": ["Lexend"],
+                        "h3": ["Lexend"],
+                        "body-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "h1": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "h2": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "h3": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background min-h-screen">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 shadow-[0px_4px_12px_rgba(31,41,55,0.05)]">
+<div class="flex items-center gap-4">
+<span class="text-xl font-bold tracking-tight text-blue-600 dark:text-blue-400">MyFitnessBuddy</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors rounded-full">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors rounded-full">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</header>
+<!-- SideNavBar -->
+<aside class="hidden md:flex flex-col fixed left-0 top-0 h-full py-8 px-4 z-40 bg-white dark:bg-slate-900 border-r border-slate-100 dark:border-slate-800 w-64 shadow-none">
+<div class="mb-8 px-2">
+<h2 class="text-lg font-black text-blue-600 dark:text-blue-400">MyFitnessBuddy</h2>
+<p class="text-[10px] uppercase tracking-widest text-slate-400 font-bold">Collaborative Clarity</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-lexend text-sm">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 font-bold border-r-4 border-blue-600 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">add_box</span>
+<span class="font-lexend text-sm">Log Workout</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">history</span>
+<span class="font-lexend text-sm">History</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">insights</span>
+<span class="font-lexend text-sm">Progress</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-lexend text-sm">Friends</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">handshake</span>
+<span class="font-lexend text-sm">Shared Plans</span>
+</a>
+</nav>
+<button class="mt-4 w-full bg-primary text-white py-3 rounded-lg font-lexend text-sm font-semibold active:scale-95 transition-transform">
+            Start New Session
+        </button>
+</aside>
+<!-- Main Content -->
+<main class="md:ml-64 pt-24 pb-32 px-6">
+<div class="max-w-4xl mx-auto">
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+<div>
+<h1 class="font-h1 text-h1 text-on-background">Log Workout</h1>
+<p class="font-body-md text-body-md text-outline">Keep the momentum going. Record your progress.</p>
+</div>
+<div class="flex gap-3">
+<button class="px-6 py-2.5 rounded-lg font-lexend text-sm font-semibold bg-primary text-white shadow-lg active:scale-95 transition-all">
+                        Save Workout
+                    </button>
+</div>
+</div>
+<!-- Workout Meta Section -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+<div class="md:col-span-2 bg-white border border-slate-200 rounded-xl p-lg shadow-[0px_4px_12px_rgba(31,41,55,0.05)]">
+<div class="space-y-4">
+<div>
+<label class="block font-label-caps text-label-caps text-outline mb-1">WORKOUT TITLE</label>
+<input class="w-full bg-white border border-outline-variant rounded-lg px-4 py-3 text-body-md focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" placeholder="e.g., Morning Push Day" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="block font-label-caps text-label-caps text-outline mb-1">DATE</label>
+<input class="w-full bg-white border border-outline-variant rounded-lg px-4 py-3 text-body-md focus:outline-none focus:border-primary transition-all" type="date" value="2023-11-24"/>
+</div>
+<div>
+<label class="block font-label-caps text-label-caps text-outline mb-1">DURATION (EST.)</label>
+<div class="relative">
+<input class="w-full bg-white border border-outline-variant rounded-lg px-4 py-3 text-body-md focus:outline-none focus:border-primary transition-all" placeholder="60" type="text"/>
+<span class="absolute right-4 top-1/2 -translate-y-1/2 text-body-sm text-outline">mins</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-primary-container/10 border border-primary/20 rounded-xl p-lg flex flex-col justify-center items-center text-center relative overflow-hidden">
+<div class="z-10">
+<span class="material-symbols-outlined text-primary text-4xl mb-2">trending_up</span>
+<h3 class="font-h3 text-h3 text-primary mb-1">Weekly Streak</h3>
+<p class="font-lexend text-2xl font-bold text-primary">4 Days</p>
+</div>
+<div class="absolute inset-0 opacity-10">
+<div class="w-full h-full bg-gradient-to-br from-primary to-transparent"></div>
+</div>
+</div>
+</div>
+<!-- Dynamic Exercise Cards -->
+<div class="space-y-6 mb-10">
+<!-- Exercise Card 1 -->
+<div class="bg-white border border-slate-200 rounded-xl shadow-[0px_4px_12px_rgba(31,41,55,0.05)] overflow-hidden">
+<div class="p-lg border-b border-slate-50 flex items-center justify-between bg-slate-50/50">
+<div class="flex items-center gap-3 flex-1 max-w-md">
+<span class="material-symbols-outlined text-primary">fitness_center</span>
+<select class="bg-transparent border-none font-h3 text-h3 text-on-surface focus:ring-0 w-full cursor-pointer">
+<option>Bench Press (Barbell)</option>
+<option>Incline Dumbbell Press</option>
+<option>Chest Fly</option>
+<option>Push Ups</option>
+</select>
+</div>
+<button class="p-2 text-outline hover:text-error transition-colors">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+<div class="p-lg">
+<table class="w-full text-left">
+<thead>
+<tr class="font-label-caps text-label-caps text-outline">
+<th class="pb-4 font-semibold w-12 text-center">SET</th>
+<th class="pb-4 font-semibold pl-4">REPS</th>
+<th class="pb-4 font-semibold pl-4">WEIGHT (KG)</th>
+<th class="pb-4 font-semibold text-right">ACTION</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100">
+<tr>
+<td class="py-4 text-center font-bold text-primary">1</td>
+<td class="py-4 pl-4">
+<input class="w-24 bg-surface-container-low border border-outline-variant rounded-lg px-3 py-2 text-body-md focus:border-primary outline-none" type="number" value="12"/>
+</td>
+<td class="py-4 pl-4">
+<input class="w-24 bg-surface-container-low border border-outline-variant rounded-lg px-3 py-2 text-body-md focus:border-primary outline-none" type="number" value="60"/>
+</td>
+<td class="py-4 text-right">
+<button class="p-2 text-outline hover:text-error transition-colors">
+<span class="material-symbols-outlined text-sm">close</span>
+</button>
+</td>
+</tr>
+<tr>
+<td class="py-4 text-center font-bold text-primary">2</td>
+<td class="py-4 pl-4">
+<input class="w-24 bg-surface-container-low border border-outline-variant rounded-lg px-3 py-2 text-body-md focus:border-primary outline-none" type="number" value="10"/>
+</td>
+<td class="py-4 pl-4">
+<input class="w-24 bg-surface-container-low border border-outline-variant rounded-lg px-3 py-2 text-body-md focus:border-primary outline-none" type="number" value="60"/>
+</td>
+<td class="py-4 text-right">
+<button class="p-2 text-outline hover:text-error transition-colors">
+<span class="material-symbols-outlined text-sm">close</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+<button class="mt-4 flex items-center gap-2 text-primary font-lexend text-sm font-semibold hover:underline">
+<span class="material-symbols-outlined text-lg">add</span>
+                            Add Set
+                        </button>
+</div>
+</div>
+<!-- Exercise Card 2 -->
+<div class="bg-white border border-slate-200 rounded-xl shadow-[0px_4px_12px_rgba(31,41,55,0.05)] overflow-hidden">
+<div class="p-lg border-b border-slate-50 flex items-center justify-between bg-slate-50/50">
+<div class="flex items-center gap-3 flex-1 max-w-md">
+<span class="material-symbols-outlined text-primary">fitness_center</span>
+<select class="bg-transparent border-none font-h3 text-h3 text-on-surface focus:ring-0 w-full cursor-pointer">
+<option>Squat (High Bar)</option>
+<option>Leg Press</option>
+<option>Leg Extension</option>
+</select>
+</div>
+<button class="p-2 text-outline hover:text-error transition-colors">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+<div class="p-lg">
+<table class="w-full text-left">
+<thead>
+<tr class="font-label-caps text-label-caps text-outline">
+<th class="pb-4 font-semibold w-12 text-center">SET</th>
+<th class="pb-4 font-semibold pl-4">REPS</th>
+<th class="pb-4 font-semibold pl-4">WEIGHT (KG)</th>
+<th class="pb-4 font-semibold text-right">ACTION</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100">
+<tr>
+<td class="py-4 text-center font-bold text-primary">1</td>
+<td class="py-4 pl-4">
+<input class="w-24 bg-surface-container-low border border-outline-variant rounded-lg px-3 py-2 text-body-md focus:border-primary outline-none" placeholder="0" type="number"/>
+</td>
+<td class="py-4 pl-4">
+<input class="w-24 bg-surface-container-low border border-outline-variant rounded-lg px-3 py-2 text-body-md focus:border-primary outline-none" placeholder="0" type="number"/>
+</td>
+<td class="py-4 text-right">
+<button class="p-2 text-outline hover:text-error transition-colors">
+<span class="material-symbols-outlined text-sm">close</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+<button class="mt-4 flex items-center gap-2 text-primary font-lexend text-sm font-semibold hover:underline">
+<span class="material-symbols-outlined text-lg">add</span>
+                            Add Set
+                        </button>
+</div>
+</div>
+</div>
+<!-- Add Exercise Button -->
+<button class="w-full py-4 border-2 border-dashed border-primary/30 rounded-xl text-primary font-lexend font-semibold flex items-center justify-center gap-2 hover:bg-primary/5 transition-all mb-12">
+<span class="material-symbols-outlined">add_circle</span>
+                Add Exercise
+            </button>
+<!-- Bottom Action Summary (Bento Style) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="bg-white p-lg rounded-xl border border-slate-200 shadow-[0px_4px_12px_rgba(31,41,55,0.05)]">
+<h4 class="font-label-caps text-label-caps text-outline mb-4">WORKOUT NOTES</h4>
+<textarea class="w-full bg-surface-container-low border border-outline-variant rounded-lg p-3 text-body-sm focus:border-primary outline-none resize-none" placeholder="How did it feel? (Optional)" rows="3"></textarea>
+</div>
+<div class="bg-secondary-container p-lg rounded-xl border border-slate-200 shadow-[0px_4px_12px_rgba(31,41,55,0.05)] flex flex-col justify-between">
+<div>
+<h4 class="font-label-caps text-label-caps text-on-secondary-container mb-2">SUMMARY</h4>
+<div class="flex justify-between items-center mb-1">
+<span class="text-body-sm text-on-secondary-container/80">Total Sets</span>
+<span class="font-bold text-on-secondary-container">3 Sets</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-body-sm text-on-secondary-container/80">Estimated Volume</span>
+<span class="font-bold text-on-secondary-container">1,320 kg</span>
+</div>
+</div>
+<button class="w-full mt-4 bg-primary text-white py-3 rounded-lg font-lexend font-bold text-sm shadow-md active:scale-95 transition-transform">
+                        Complete &amp; Save
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 pb-safe bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-t border-slate-200 dark:border-slate-800 shadow-[0px_-4px_12px_rgba(31,41,55,0.05)]">
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-blue-500 active:scale-90 transition-all" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-lexend text-[10px] font-medium uppercase tracking-wider">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30 rounded-xl px-3 py-1 active:scale-90 transition-all" href="#">
+<span class="material-symbols-outlined">add_circle</span>
+<span class="font-lexend text-[10px] font-medium uppercase tracking-wider">Log</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-blue-500 active:scale-90 transition-all" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="font-lexend text-[10px] font-medium uppercase tracking-wider">History</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-blue-500 active:scale-90 transition-all" href="#">
+<span class="material-symbols-outlined">equalizer</span>
+<span class="font-lexend text-[10px] font-medium uppercase tracking-wider">Progress</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-blue-500 active:scale-90 transition-all" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-lexend text-[10px] font-medium uppercase tracking-wider">Social</span>
+</a>
+</nav>
+<!-- Contextual FAB (Hidden on Log Page per instructions, but kept as reference for system logic) -->
+<!-- Suppression logic applied: Navigation shell context prioritizes the Log flow -->
+</body></html>

@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700;800;900&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "background": "#faf8ff",
+            "outline-variant": "#c3c6d7",
+            "inverse-on-surface": "#f0f0fb",
+            "secondary-fixed": "#d5e4f8",
+            "outline": "#737686",
+            "on-secondary-fixed-variant": "#3a4858",
+            "secondary-fixed-dim": "#b9c8db",
+            "surface": "#faf8ff",
+            "surface-container-highest": "#e1e2ed",
+            "tertiary-fixed-dim": "#b6c4ff",
+            "on-secondary": "#ffffff",
+            "on-tertiary-fixed-variant": "#264191",
+            "on-error": "#ffffff",
+            "surface-container": "#ededf9",
+            "secondary": "#516070",
+            "on-secondary-container": "#576676",
+            "tertiary-fixed": "#dce1ff",
+            "on-surface-variant": "#434655",
+            "on-primary": "#ffffff",
+            "on-primary-container": "#eeefff",
+            "inverse-primary": "#b4c5ff",
+            "error": "#ba1a1a",
+            "surface-tint": "#0053db",
+            "on-secondary-fixed": "#0e1d2b",
+            "secondary-container": "#d5e4f8",
+            "primary": "#004ac6",
+            "primary-container": "#2563eb",
+            "surface-container-low": "#f3f3fe",
+            "tertiary-container": "#5069bb",
+            "on-tertiary-container": "#eff0ff",
+            "surface-variant": "#e1e2ed",
+            "surface-bright": "#faf8ff",
+            "error-container": "#ffdad6",
+            "primary-fixed": "#dbe1ff",
+            "on-primary-fixed-variant": "#003ea8",
+            "inverse-surface": "#2e3039",
+            "on-tertiary": "#ffffff",
+            "tertiary": "#3750a0",
+            "surface-container-high": "#e7e7f3",
+            "on-tertiary-fixed": "#00164e",
+            "on-error-container": "#93000a",
+            "on-background": "#191b23",
+            "surface-dim": "#d9d9e5",
+            "on-surface": "#191b23",
+            "primary-fixed-dim": "#b4c5ff",
+            "on-primary-fixed": "#00174b",
+            "surface-container-lowest": "#ffffff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "xs": "4px",
+            "xl": "40px",
+            "base": "4px",
+            "sm": "8px",
+            "lg": "24px",
+            "md": "16px",
+            "container-max": "1200px",
+            "gutter": "16px"
+          },
+          "fontFamily": {
+            "body-lg": ["Inter"],
+            "label-caps": ["Inter"],
+            "h1": ["Lexend"],
+            "body-md": ["Inter"],
+            "h2": ["Lexend"],
+            "h3": ["Lexend"],
+            "body-sm": ["Inter"]
+          },
+          "fontSize": {
+            "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+            "label-caps": ["12px", {"letterSpacing": "0.05em", "fontWeight": "600"}],
+            "h1": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+            "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+            "h2": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+            "h3": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+            "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    body {
+      background-color: #faf8ff;
+    }
+  </style>
+</head>
+<body class="font-body-md text-on-background">
+<!-- TopAppBar Navigation Shell -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-white border-b border-slate-100 shadow-[0px_4px_12px_rgba(31,41,55,0.05)]">
+<div class="flex items-center gap-4">
+<span class="text-xl font-bold tracking-tight text-blue-600 font-h2">MyFitnessBuddy</span>
+</div>
+<nav class="hidden md:flex items-center space-x-8">
+<a class="text-slate-500 font-body-sm hover:bg-slate-50 transition-colors px-3 py-2 rounded-lg" href="#">Dashboard</a>
+<a class="text-slate-500 font-body-sm hover:bg-slate-50 transition-colors px-3 py-2 rounded-lg" href="#">Log Workout</a>
+<a class="text-slate-500 font-body-sm hover:bg-slate-50 transition-colors px-3 py-2 rounded-lg" href="#">History</a>
+<a class="text-blue-600 font-semibold font-body-sm px-3 py-2 rounded-lg bg-blue-50" href="#">Progress</a>
+</nav>
+<div class="flex items-center gap-3">
+<button class="p-2 text-slate-500 hover:bg-slate-50 rounded-full transition-colors active:scale-95">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-slate-500 hover:bg-slate-50 rounded-full transition-colors active:scale-95">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</header>
+<!-- SideNavBar Navigation Shell (Desktop Only) -->
+<aside class="hidden md:flex flex-col fixed left-0 top-0 h-full py-8 px-4 z-40 bg-white border-r border-slate-100 w-64 pt-24">
+<div class="mb-8 px-2">
+<h2 class="font-h3 text-blue-600">MyFitnessBuddy</h2>
+<p class="text-xs text-slate-400">Collaborative Clarity</p>
+</div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-50 rounded-xl transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-body-sm">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-50 rounded-xl transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="add_box">add_box</span>
+<span class="font-body-sm">Log Workout</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-50 rounded-xl transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span class="font-body-sm">History</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 bg-blue-50 text-blue-600 font-bold border-r-4 border-blue-600 rounded-l-xl transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="insights">insights</span>
+<span class="font-body-sm">Progress</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-50 rounded-xl transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-body-sm">Friends</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-50 rounded-xl transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="handshake">handshake</span>
+<span class="font-body-sm">Shared Plans</span>
+</a>
+</nav>
+<div class="mt-auto px-2">
+<button class="w-full bg-primary text-on-primary py-3 rounded-xl font-bold flex items-center justify-center gap-2 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+        Start New Session
+      </button>
+</div>
+</aside>
+<!-- Main Canvas -->
+<main class="pt-24 pb-20 md:pb-8 md:pl-72 px-6 max-w-7xl mx-auto min-h-screen">
+<!-- Page Header & Lift Selector -->
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+<div>
+<h1 class="font-h1 text-on-background">Progress Analytics</h1>
+<p class="text-slate-500 font-body-md">Analyze your performance trends and strength milestones.</p>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-caps text-slate-500 uppercase tracking-wider text-[10px]">Select Exercise</label>
+<div class="relative group">
+<select class="appearance-none bg-white border border-outline-variant rounded-xl px-4 py-2.5 pr-10 font-body-md text-on-surface focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all w-full md:w-64 cursor-pointer">
+<option>Bench Press (Barbell)</option>
+<option>Squat (High Bar)</option>
+<option>Deadlift (Conventional)</option>
+<option>Overhead Press</option>
+<option>Pull Ups</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-outline">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Stats Highlight Bento -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8 lg:grid-cols-3">
+<div class="bg-white p-lg rounded-xl border border-slate-100 shadow-[0px_4px_12px_rgba(31,41,55,0.05)]">
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-caps text-slate-500">Estimated 1RM</span>
+<span class="material-symbols-outlined text-blue-600" data-icon="fitness_center">fitness_center</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-3xl font-h2 text-on-surface">225</span>
+<span class="text-slate-400 font-body-sm">lbs</span>
+</div>
+<div class="flex items-center gap-1 mt-2 text-emerald-600 font-body-sm">
+<span class="material-symbols-outlined text-sm" data-icon="trending_up">trending_up</span>
+<span>+5.2% this month</span>
+</div>
+</div>
+<div class="bg-white p-lg rounded-xl border border-slate-100 shadow-[0px_4px_12px_rgba(31,41,55,0.05)]">
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-caps text-slate-500">Total Volume</span>
+<span class="material-symbols-outlined text-blue-600" data-icon="stacks">stacks</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-3xl font-h2 text-on-surface">12,450</span>
+<span class="text-slate-400 font-body-sm">lbs</span>
+</div>
+<div class="flex items-center gap-1 mt-2 text-emerald-600 font-body-sm">
+<span class="material-symbols-outlined text-sm" data-icon="trending_up">trending_up</span>
+<span>+840 lbs vs last week</span>
+</div>
+</div>
+<div class="bg-white p-lg rounded-xl border border-slate-100 shadow-[0px_4px_12px_rgba(31,41,55,0.05)]">
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-caps text-slate-500">Workout Frequency</span>
+<span class="material-symbols-outlined text-blue-600" data-icon="event_repeat">event_repeat</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-3xl font-h2 text-on-surface">4.2</span>
+<span class="text-slate-400 font-body-sm">/ week</span>
+</div>
+<div class="flex items-center gap-1 mt-2 text-slate-500 font-body-sm">
+<span class="material-symbols-outlined text-sm" data-icon="horizontal_rule">horizontal_rule</span>
+<span>Steady streak</span>
+</div>
+</div>
+</div>
+<!-- Main Chart Section -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Primary Strength Chart -->
+<div class="lg:col-span-2 bg-white p-lg rounded-xl border border-slate-100 shadow-[0px_4px_12px_rgba(31,41,55,0.05)] lg:col-span-3">
+<div class="flex items-center justify-between mb-8">
+<h3 class="font-h3 text-on-surface">Weight Progress Over Time</h3>
+<div class="flex gap-2">
+<button class="px-3 py-1 text-xs font-label-caps bg-blue-50 text-blue-600 rounded-full">1M</button>
+<button class="px-3 py-1 text-xs font-label-caps text-slate-400 hover:bg-slate-50 rounded-full transition-colors">3M</button>
+<button class="px-3 py-1 text-xs font-label-caps text-slate-400 hover:bg-slate-50 rounded-full transition-colors">6M</button>
+<button class="px-3 py-1 text-xs font-label-caps text-slate-400 hover:bg-slate-50 rounded-full transition-colors">ALL</button>
+</div>
+</div>
+<div class="h-80 w-full relative flex items-end justify-between px-2 pt-8">
+<!-- Grid Lines -->
+<div class="absolute inset-0 flex flex-col justify-between pt-8 pb-10">
+<div class="border-t border-slate-50 w-full"></div>
+<div class="border-t border-slate-50 w-full"></div>
+<div class="border-t border-slate-50 w-full"></div>
+<div class="border-t border-slate-50 w-full"></div>
+</div>
+<!-- Mock Line Chart Path (SVG) -->
+<svg class="absolute inset-0 h-full w-full px-2 pt-8 pb-10" preserveaspectratio="none" viewbox="0 0 800 320">
+<defs>
+<lineargradient id="lineGradient" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#004ac6" stop-opacity="0.2"></stop>
+<stop offset="100%" stop-color="#004ac6" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+<path d="M0,280 Q100,240 200,260 T400,180 T600,120 T800,80" fill="transparent" stroke="#004ac6" stroke-linecap="round" stroke-width="3"></path>
+<path d="M0,280 Q100,240 200,260 T400,180 T600,120 T800,80 L800,320 L0,320 Z" fill="url(#lineGradient)"></path>
+<!-- Points -->
+<circle cx="200" cy="260" fill="white" r="5" stroke="#004ac6" stroke-width="2"></circle>
+<circle cx="400" cy="180" fill="white" r="5" stroke="#004ac6" stroke-width="2"></circle>
+<circle cx="600" cy="120" fill="white" r="5" stroke="#004ac6" stroke-width="2"></circle>
+<circle cx="800" cy="80" fill="#004ac6" r="6"></circle>
+</svg>
+<!-- X-Axis Labels -->
+<div class="absolute bottom-2 left-0 w-full flex justify-between text-slate-400 text-[10px] font-label-caps px-2">
+<span>SEP 01</span>
+<span>SEP 08</span>
+<span>SEP 15</span>
+<span>SEP 22</span>
+<span>SEP 29</span>
+</div>
+</div>
+</div>
+<!-- Workout Intensity Breakdown -->
+</div>
+<!-- Secondary Insights Section -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+<!-- Consistency Heatmap -->
+<div class="bg-white p-lg rounded-xl border border-slate-100 shadow-[0px_4px_12px_rgba(31,41,55,0.05)]">
+<h3 class="font-h3 text-on-surface mb-6">Workout Frequency</h3>
+<div class="flex flex-wrap gap-2">
+<!-- Calendar Mock -->
+<div class="grid grid-cols-7 gap-2 w-full">
+<template class="hidden">
+<!-- Repetitive generation simulation -->
+</template>
+<!-- Render dummy grid -->
+<div class="h-8 rounded bg-blue-50"></div>
+<div class="h-8 rounded bg-blue-200"></div>
+<div class="h-8 rounded bg-blue-600"></div>
+<div class="h-8 rounded bg-slate-50"></div>
+<div class="h-8 rounded bg-blue-100"></div>
+<div class="h-8 rounded bg-blue-400"></div>
+<div class="h-8 rounded bg-blue-600"></div>
+<div class="h-8 rounded bg-blue-200"></div>
+<div class="h-8 rounded bg-blue-100"></div>
+<div class="h-8 rounded bg-slate-50"></div>
+<div class="h-8 rounded bg-blue-500"></div>
+<div class="h-8 rounded bg-blue-100"></div>
+<div class="h-8 rounded bg-slate-50"></div>
+<div class="h-8 rounded bg-blue-300"></div>
+<div class="h-8 rounded bg-blue-600"></div>
+<div class="h-8 rounded bg-blue-200"></div>
+<div class="h-8 rounded bg-blue-400"></div>
+<div class="h-8 rounded bg-blue-600"></div>
+<div class="h-8 rounded bg-slate-50"></div>
+<div class="h-8 rounded bg-blue-100"></div>
+<div class="h-8 rounded bg-blue-50"></div>
+</div>
+</div>
+<div class="mt-4 flex items-center justify-end gap-2 text-[10px] font-label-caps text-slate-400 uppercase">
+<span>Less</span>
+<div class="flex gap-1">
+<div class="w-3 h-3 bg-slate-50 rounded-sm"></div>
+<div class="w-3 h-3 bg-blue-100 rounded-sm"></div>
+<div class="w-3 h-3 bg-blue-300 rounded-sm"></div>
+<div class="w-3 h-3 bg-blue-600 rounded-sm"></div>
+</div>
+<span>More Intensity</span>
+</div>
+</div>
+<!-- Training Split Distribution -->
+<div class="bg-white p-lg rounded-xl border border-slate-100 shadow-[0px_4px_12px_rgba(31,41,55,0.05)]">
+<h3 class="font-h3 text-on-surface mb-6">Muscle Focus (30 Days)</h3>
+<div class="flex items-center gap-8">
+<div class="relative w-32 h-32 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90" viewbox="0 0 36 36">
+<path class="text-slate-100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="4"></path>
+<path class="text-blue-600" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831" fill="none" stroke="currentColor" stroke-dasharray="40, 100" stroke-linecap="round" stroke-width="4"></path>
+<path class="text-blue-400" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831" fill="none" stroke="currentColor" stroke-dasharray="25, 100" stroke-dashoffset="-40" stroke-linecap="round" stroke-width="4"></path>
+<path class="text-blue-200" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831" fill="none" stroke="currentColor" stroke-dasharray="15, 100" stroke-dashoffset="-65" stroke-linecap="round" stroke-width="4"></path>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-xl font-h2 text-on-surface">80%</span>
+<span class="text-[9px] font-label-caps text-slate-400">Target</span>
+</div>
+</div>
+<div class="flex-1 space-y-3">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-blue-600"></div>
+<span class="font-body-sm text-slate-600">Push (Chest/Tris)</span>
+<span class="ml-auto font-label-caps">40%</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-blue-400"></div>
+<span class="font-body-sm text-slate-600">Pull (Back/Bis)</span>
+<span class="ml-auto font-label-caps">25%</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-blue-200"></div>
+<span class="font-body-sm text-slate-600">Legs (Quads/Hams)</span>
+<span class="ml-auto font-label-caps">15%</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-slate-100"></div>
+<span class="font-body-sm text-slate-600">Others</span>
+<span class="ml-auto font-label-caps">20%</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Motivational Image Card -->
+<div class="mt-8 relative overflow-hidden rounded-xl h-64 border border-slate-100 shadow-[0px_4px_12px_rgba(31,41,55,0.05)]">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="A cinematic, high-contrast photograph of a sleek, minimalist home gym at sunrise. Soft, golden light streams through large windows, highlighting professional-grade dumbbells and a clean weight bench. The environment is pristine and modern, reflecting the digital health and collaborative clarity brand identity with a palette of deep blues and bright, airy whites. The mood is empowering, focused, and serene, perfect for a high-performance fitness application." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCz6MbAhYrhbtyJkggD9uT5HelmRzqHqYvGM-pPMNjq8WjKu70aEEDMC2iT8ZBGCSGu9jaXW5WpAWh9uFJ0JifMDuVDJ39xijVSoPVmFZIB4g7HjuglBGOUa33lA2k_x2VebOBq-nLiy7uJEhqORFJvDZgspIisPykm0pt4eop2MvVrunof81clr15lGZyWDUGhM0yJSkN7fIXKTDV2fR_nQAn2W9BETl591GKejz97ROQucCK512z8CBJMpOiwfLw6CLiqBaOtY3s"/>
+<div class="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-transparent flex flex-col justify-center px-lg">
+<span class="font-label-caps text-blue-200 uppercase mb-2 tracking-widest">Community Leaderboard</span>
+<h2 class="text-white font-h2 text-2xl mb-4 max-w-md">You're in the top 5% of bench pressers this week.</h2>
+<button class="bg-white text-blue-600 px-6 py-2.5 rounded-xl font-bold w-fit active:scale-95 transition-transform">
+          View Ranking
+        </button>
+</div>
+</div>
+</main>
+<!-- BottomNavBar Navigation Shell (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 pb-safe bg-white/90 backdrop-blur-md border-t border-slate-200 shadow-[0px_-4px_12px_rgba(31,41,55,0.05)]">
+<a class="flex flex-col items-center justify-center text-slate-400" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-lexend text-[10px] font-medium uppercase tracking-wider">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400" href="#">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+<span class="font-lexend text-[10px] font-medium uppercase tracking-wider">Log</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+<span class="font-lexend text-[10px] font-medium uppercase tracking-wider">History</span>
+</a>
+<a class="flex flex-col items-center justify-center text-blue-600 bg-blue-50 rounded-xl px-3 py-1" href="#">
+<span class="material-symbols-outlined" data-icon="equalizer">equalizer</span>
+<span class="font-lexend text-[10px] font-medium uppercase tracking-wider">Progress</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-lexend text-[10px] font-medium uppercase tracking-wider">Social</span>
+</a>
+</nav>
+</body></html>
