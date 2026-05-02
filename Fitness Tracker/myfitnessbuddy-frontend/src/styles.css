@@ -629,7 +629,28 @@ h3 {
   margin-top: 8px;
   padding: 12px;
   text-align: left;
+  transition: background 160ms ease, color 160ms ease, transform 160ms ease, box-shadow 160ms ease;
   width: 100%;
+}
+
+.friend-list button:hover {
+  background: var(--light-blue);
+  box-shadow: 0 6px 14px rgba(37, 99, 235, 0.12);
+  color: var(--primary-blue);
+  transform: translateX(4px);
+}
+
+.timeline-card button:hover {
+  background: var(--light-blue);
+  box-shadow: 0 6px 14px rgba(37, 99, 235, 0.12);
+  color: var(--primary-blue);
+  transform: translateX(4px);
+}
+
+.timeline-card button.selected:hover,
+.friend-list button.selected:hover {
+  background: var(--dark-blue);
+  color: #fff;
 }
 
 .timeline-card .selected,

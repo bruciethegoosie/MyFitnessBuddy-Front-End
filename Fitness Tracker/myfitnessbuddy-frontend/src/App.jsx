@@ -93,7 +93,7 @@ function SideNav({ activePage, onNavigate }) {
     <aside className="sidenav">
       <div className="side-brand">
         <h2>MyFitnessBuddy</h2>
-        <p>Collaborative Clarity</p>
+        <p>Fitness Tracker</p>
       </div>
       <nav>
         {pages.map((page) => (
@@ -219,7 +219,7 @@ function HeroBanner() {
     <section className="hero-banner">
       <img src={imageUrl} alt="Modern gym interior" />
       <div>
-        <h2>Consistency is King</h2>
+        <h2>Consistency is Key</h2>
         <p>Unlock your next achievement by completing 2 more sessions this week.</p>
         <button>Join Weekend Challenge</button>
       </div>
@@ -299,6 +299,9 @@ function ExerciseCard({ name, rows }) {
 }
 
 function History() {
+  const months = ["May 2026", "April 2026", "March 2026", "February 2026"];
+  const [selectedMonth, setSelectedMonth] = useState(months[0]);
+
   return (
     <>
       <section className="page-header split">
@@ -311,8 +314,14 @@ function History() {
       <section className="history-layout">
         <aside className="card timeline-card">
           <h2>Timeline</h2>
-          {["May 2026", "April 2026", "March 2026", "February 2026"].map((month, index) => (
-            <button className={index === 0 ? "selected" : ""} key={month}>{month}</button>
+          {months.map((month) => (
+            <button
+              className={selectedMonth === month ? "selected" : ""}
+              key={month}
+              onClick={() => setSelectedMonth(month)}
+            >
+              {month}
+            </button>
           ))}
         </aside>
         <div className="history-list">
@@ -378,6 +387,9 @@ function Progress() {
 }
 
 function Friends() {
+  const friends = ["Dario Bravo", "Bruce Le", "Bad Bunny"];
+  const [selectedFriend, setSelectedFriend] = useState(friends[0]);
+
   return (
     <>
       <section className="page-header split">
@@ -387,8 +399,15 @@ function Friends() {
       <section className="friends-grid">
         <aside className="card friend-list">
           <h2>Active Friends</h2>
-          {["Dario Bravo", "Bruce Le", "Bad Bunny"].map((name, index) => (
-            <button className={index === 0 ? "selected" : ""} key={name}><Icon>account_circle</Icon>{name}</button>
+          {friends.map((name) => (
+            <button
+              className={selectedFriend === name ? "selected" : ""}
+              key={name}
+              onClick={() => setSelectedFriend(name)}
+            >
+              <Icon>account_circle</Icon>
+              {name}
+            </button>
           ))}
         </aside>
         <div className="compare-area">
